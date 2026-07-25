@@ -1,46 +1,128 @@
-Background & Context
-Financial markets, particularly emerging equity benchmarks such as Indonesia's LQ45 Index, operate in environments characterized by imperfect information, varying liquidity levels, and strategic interactions among market participants. Traditional financial models frequently rely on the assumption of fully rational agents possessing symmetric information. In empirical reality, however, market dynamics are shaped by interactions between heterogeneous traders—specifically, Informed agents (such as institutional investors with superior analytical capacity) and Uninformed agents (such as retail traders relying on lagging technical signals).
+# Bayesian Game Analysis on Indonesia's LQ45 Stock Market
 
-Problem Statement & Research Objectives
-To model strategic decision-making under uncertainty, this study employs a Bayesian Game framework. In an incomplete information setting, market participants form ex-ante beliefs regarding the regime or "type" of opponent they face and optimize their choices accordingly to achieve a Bayesian Nash Equilibrium (BNE).
+## 📖 Background & Context
 
-This research addresses two main objective questions:
-1. Empirical Payoff Profiling: How do effective payoffs and risk-return profiles differ between Informed and Uninformed market regimes when risk penalties and information premia are introduced?
-2. Equilibrium Convergence: To what extent do actual strategy choices (driven by momentum indicators) align with or diverge from theoretical Bayesian Nash Equilibrium predictions?
+Financial markets, particularly emerging equity benchmarks such as Indonesia's **LQ45 Index**, operate in environments characterized by imperfect information, varying liquidity levels, and strategic interactions among market participants.
 
-Theoretical & Practical Significance
-By integrating technical indicators (RSI momentum and transaction volume) with formal game-theoretic optimization, this thesis bridges the gap between pure strategic economic theory and empirical market microstructure. It provides actionable insights into market efficiency, trader inertia, and risk dynamics in the Indonesian capital market.
+Traditional financial models often assume that all market participants are fully rational and possess symmetric information. In practice, however, financial markets consist of heterogeneous agents with different levels of information and analytical capabilities:
 
-Dataset Description
-1. price (Pt​) : Adjusted Closing Price (Adt​).
-2. volume (Vt​) : Daily Transaction Volume (Vot​).
-3. return (rt​) : rt​=ln(Pt​/Pt−1​).
-4. volatility (σt​) : Rolling 10-day Standard Deviation.
-5. rsi_lag (RSIt−1​) : 14-day Relative Strength Index (lagged 1 day).
+- **Informed Traders** – Institutional investors or sophisticated market participants with superior analytical resources.
+- **Uninformed Traders** – Retail investors who primarily rely on delayed technical indicators and publicly available information.
 
-The conclusions
+Understanding the interaction between these two groups is essential for explaining real-world market behavior and deviations from classical financial theory.
 
-Plot 1: Empirical Payoff Profile (Informed vs Uninformed)
-Key Findings
-Median Payoff: Both group types (Informed and Uninformed) have median payoffs centered very close to zero.
+---
 
-Variance & Tail Risk (Outliers): The Informed group displays significantly higher dispersion (wider spread of red outlier points), reaching upside gains near +0.20 and downside losses past -0.30. The Uninformed group has a narrower distribution with fewer extreme outliers.
+## 🎯 Research Objectives
 
-Core Conclusion
-Information Premia Come with Variance: Being "Informed" (proxied by higher trading volume days) does not guarantee consistently higher baseline returns. Instead, high-volume periods subject investors to higher payoff volatility and asymmetric risk exposure.
+This study models strategic decision-making under uncertainty using a **Bayesian Game** framework. Under incomplete information, market participants form beliefs regarding the type of opponent they face and select strategies that maximize expected utility, resulting in a **Bayesian Nash Equilibrium (BNE)**.
 
-Risk-Reward Tradeoff: Informed traders capture larger upside payoffs (positive tail), but they are simultaneously exposed to severe downside potential during market drops.
+The research focuses on two primary questions:
 
-Plot 2: Strategy Distribution Comparison (Actual vs Predicted BNE)
-Key Findings
-Hold Strategy: Actual market behavior (action, dark blue) shows a heavy bias toward Hold (around 1,200+ instances), whereas the theoretical model (BNE_Equilibrium, yellow) predicts fewer Hold decisions (~850).
+1. **Empirical Payoff Profiling**
+   - How do effective payoffs and risk-return profiles differ between **Informed** and **Uninformed** market regimes when information premiums and risk penalties are incorporated?
 
-Buy & Sell Strategies: The actual market shows lower execution frequencies for Buy and Sell compared to what the theoretical Bayesian Nash Equilibrium model prescribes.
+2. **Equilibrium Convergence**
+   - To what extent do actual trading strategies (derived from momentum indicators) align with or diverge from the theoretical **Bayesian Nash Equilibrium**?
 
-Core Conclusion
-Status Quo Bias / Inertia: Real-world market participants exhibit stronger inertia or reluctance to trade than the theoretical model predicts. While the BNE model dynamically dictates taking action (Buy or Sell) whenever expected utilities outweigh holding penalties, actual traders display a higher tendency to wait (Hold), likely driven by transaction costs, uncertainty, or behavioral loss aversion not fully captured by simple RSI triggers.
+---
 
-Model Divergence: The Bayesian game framework provides a solid baseline for rational decision-making, but empirical trading patterns show under-trading relative to theoretical optimality.
+## 💡 Theoretical & Practical Significance
 
-Synthesis Statement:
-"The Bayesian game framework demonstrates that while informed trading creates opportunities for extreme upside payoffs, it carries substantial volatility. Furthermore, empirical trader behavior exhibits a significant conservative bias—holding far more frequently than the optimal Bayesian Nash Equilibrium suggests—pointing to real-world friction and risk aversion in the LQ45 market."
+This research combines **technical analysis** with **game-theoretic optimization** by integrating:
+
+- Relative Strength Index (RSI)
+- Trading Volume
+- Bayesian Game Theory
+
+The framework bridges the gap between formal economic theory and empirical market microstructure, providing insights into:
+
+- Market efficiency
+- Information asymmetry
+- Trader behavior
+- Risk dynamics
+- Strategic decision-making in the Indonesian capital market
+
+---
+
+## 📊 Dataset Description
+
+The dataset consists of daily observations from the Indonesian **LQ45 Index** with the following variables:
+
+| Variable | Description |
+|----------|-------------|
+| **price ($P_t$)** | Adjusted Closing Price |
+| **volume ($V_t$)** | Daily Transaction Volume |
+| **return ($r_t$)** | Log Return: $r_t=\ln(P_t/P_{t-1})$ |
+| **volatility ($\sigma_t$)** | Rolling 10-Day Standard Deviation |
+| **rsi_lag ($RSI_{t-1}$)** | 14-Day Relative Strength Index (Lagged One Day) |
+
+---
+
+# 📈 Results & Discussion
+
+## 1. Empirical Payoff Profile (Informed vs Uninformed)
+
+### Key Findings
+
+- The **median payoff** for both trader groups is centered close to zero.
+- **Informed traders** exhibit substantially higher payoff dispersion.
+- Positive payoff tails reach approximately **+0.20**, while downside losses extend beyond **−0.30**.
+- **Uninformed traders** display a much narrower payoff distribution with fewer extreme outcomes.
+
+### Interpretation
+
+The results suggest that **information advantages do not necessarily translate into consistently higher returns**.
+
+Instead:
+
+- Higher information quality is associated with **greater payoff volatility**.
+- Informed traders enjoy larger upside opportunities.
+- They also bear significantly greater downside risk during adverse market conditions.
+
+### Conclusion
+
+> **Information premium comes with higher variance.**
+
+Being informed increases the potential for excess returns but simultaneously exposes investors to larger losses, illustrating the classical **risk–reward tradeoff**.
+
+---
+
+## 2. Strategy Distribution Comparison (Actual vs Bayesian Nash Equilibrium)
+
+### Key Findings
+
+- The empirical market strongly favors the **Hold** strategy, with more than **1,200 observations**.
+- The Bayesian Nash Equilibrium predicts substantially fewer **Hold** decisions (approximately **850**).
+- Conversely, the theoretical model recommends more **Buy** and **Sell** actions than those observed in the actual market.
+
+### Interpretation
+
+Real-world investors demonstrate stronger trading inertia than predicted by the rational Bayesian model.
+
+Possible explanations include:
+
+- Transaction costs
+- Market uncertainty
+- Behavioral loss aversion
+- Investor hesitation
+- Factors not fully captured by RSI-based trading signals
+
+### Conclusion
+
+> **Empirical markets tend to under-trade relative to theoretical optimal behavior.**
+
+Although the Bayesian Game framework provides a rational benchmark for strategic decision-making, actual investors display a pronounced tendency to delay trading, preferring to **Hold** rather than execute theoretically optimal **Buy** or **Sell** decisions.
+
+---
+
+# 📝 Overall Conclusions
+
+The empirical analysis demonstrates that:
+
+- **Informed traders** experience higher payoff variability, reflecting both larger upside opportunities and greater downside exposure.
+- Information advantages create **risk premiums** rather than guaranteed superior returns.
+- Actual investor behavior deviates from the predictions of **Bayesian Nash Equilibrium**, primarily due to behavioral and market frictions.
+- The Bayesian Game framework serves as a useful theoretical benchmark but does not fully capture the complexity of real-world trading behavior.
+
+Overall, this study highlights the importance of combining **game theory**, **behavioral finance**, and **technical market indicators** to better understand strategic interactions in emerging financial markets.
