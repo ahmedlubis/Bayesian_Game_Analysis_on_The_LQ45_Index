@@ -20,7 +20,7 @@ Dataset Description
 
 The conclusions
 
-1. Plot 1: Empirical Payoff Profile (Informed vs Uninformed)
+Plot 1: Empirical Payoff Profile (Informed vs Uninformed)
 Key Findings
 Median Payoff: Both group types (Informed and Uninformed) have median payoffs centered very close to zero.
 
@@ -31,7 +31,7 @@ Information Premia Come with Variance: Being "Informed" (proxied by higher tradi
 
 Risk-Reward Tradeoff: Informed traders capture larger upside payoffs (positive tail), but they are simultaneously exposed to severe downside potential during market drops.
 
-2. Plot 2: Strategy Distribution Comparison (Actual vs Predicted BNE)
+Plot 2: Strategy Distribution Comparison (Actual vs Predicted BNE)
 Key Findings
 Hold Strategy: Actual market behavior (action, dark blue) shows a heavy bias toward Hold (around 1,200+ instances), whereas the theoretical model (BNE_Equilibrium, yellow) predicts fewer Hold decisions (~850).
 
