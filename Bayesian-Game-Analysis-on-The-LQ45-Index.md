@@ -297,10 +297,10 @@ p2 <- ggplot(bne_comparison, aes(x = Strategy, fill = Model_Type)) +
 print(p1)
 ```
 
-![Bayesian Game Analysis on The LQ45 Index](empirical payoff profile.png)<!-- -->
+![Bayesian_Game_Analysis_on_The_LQ45_Index](empirical_payoff_profile.png)<!-- -->
 
 ``` r
 print(p2)
 ```
 
-![Bayesian Game Analysis on The LQ45 Index](strategy distribution comparison.png)<!-- -->
+![Bayesian_Game_Analysis_on_The_LQ45_Index](strategy_distribution_comparison.png)<!-- -->
